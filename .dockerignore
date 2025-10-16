@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+.env.local
+.wwebjs_auth
+.wwebjs_cache
+temp
+downloads
+sessions
+*.log
+.DS_Store
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+docs
