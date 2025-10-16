@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    container_name: whatsapp-bot-qr
+    restart: unless-stopped
+    volumes:
+      - ./temp:/app/temp
+      - ./downloads:/app/downloads
+      - ./sessions:/app/sessions
+      - ./.wwebjs_auth:/app/.wwebjs_auth
+      - ./.wwebjs_cache:/app/.wwebjs_cache
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Jakarta
+    # Optional: if you add web dashboard
+    # ports:
+    #   - "3000:3000"
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
